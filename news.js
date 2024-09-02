@@ -151,14 +151,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Listen for real-time input changes in the search bar
     searchInput.addEventListener("input", () => {
-        let search = searchInput.value.trim();  // Get search term and trim spaces
+        let search = searchInput.value;
+            //.trim();  // Get search term and trim spaces
 
         if (search === "") {
             // If search field is empty, load the base URL data
             getNewsData(url);
         } else {
             // Otherwise, perform the search
-            search = search.replace(/\s+/g, "+");  // Replace spaces with "+"
+            //search = search.replace(/\s+/g, "+");  // Replace spaces with "+"
             let searchURL = `https://api.spaceflightnewsapi.net/v4/articles/?limit=12&search=${search}`;
             getNewsData(searchURL);  // Fetch search results
         }
