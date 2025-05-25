@@ -6,6 +6,7 @@ window.addEventListener('load', ()=>getNewsData(url));
 
 async function getNewsData(url){
 
+    document.getElementById("loading-text").style.display = "none";
 
     const request = await fetch(url);
     const response = await request.json();
